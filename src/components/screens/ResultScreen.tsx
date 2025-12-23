@@ -36,62 +36,62 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({ personality, onRetak
         transition={{ type: "spring", damping: 12 }}
         className="w-full"
       >
-        <div ref={cardRef} className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden p-3 border-4 border-white/20">
+        <div ref={cardRef} className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden p-2 border-2 border-white/20">
           {/* Dashed Inner Border Container */}
-          <div className="border-4 border-dashed border-christmas-red/20 rounded-[2rem] p-8 text-center flex flex-col items-center relative overflow-hidden bg-white">
+          <div className="border-4 border-dashed border-christmas-red/10 rounded-[2rem] p-6 text-center flex flex-col items-center relative overflow-hidden bg-white">
              
             {/* Background Texture/Pattern */}
             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none"></div>
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-1.5 bg-christmas-red/5 text-christmas-red text-[0.65rem] font-black px-4 py-1.5 rounded-full mb-8 uppercase tracking-[0.2em] border border-christmas-red/10">
-              <Sparkles className="w-3 h-3" />
+            <div className="inline-flex items-center gap-1 bg-christmas-red/5 text-christmas-red text-[0.6rem] font-black px-3 py-1 rounded-full mb-4 uppercase tracking-[0.2em] border border-christmas-red/10">
+              <Sparkles className="w-2.5 h-2.5" />
               Official Spirit Report
-              <Sparkles className="w-3 h-3" />
+              <Sparkles className="w-2.5 h-2.5" />
             </div>
 
             {/* Icon/Image Section */}
-            <div className="relative mb-8">
+            <div className="relative mb-4">
               <motion.div 
                 animate={{ scale: [1, 1.05, 1] }}
-                transition={{ repeat: Infinity, duration: 3 }}
-                className="w-40 h-40 bg-christmas-yellow/5 rounded-full flex items-center justify-center relative z-10"
+                transition={{ repeat: Infinity, duration: 4 }}
+                className="w-32 h-32 bg-christmas-yellow/5 rounded-full flex items-center justify-center relative z-10"
               >
-                <span className="text-8xl drop-shadow-xl select-none">
+                <span className="text-7xl drop-shadow-xl select-none">
                   {personality.imageIcon.match(/[^\x00-\x7F]/) ? personality.imageIcon : '🎁'}
                 </span>
               </motion.div>
-              <div className="absolute -top-4 -left-4 text-christmas-yellow drop-shadow-[0_0_10px_rgba(255,210,63,0.5)] animate-pulse">
-                <Star className="w-8 h-8 fill-current" />
+              <div className="absolute -top-3 -left-3 text-christmas-yellow drop-shadow-[0_0_10px_rgba(255,210,63,0.5)] animate-pulse">
+                <Star className="w-6 h-6 fill-current" />
               </div>
-              <div className="absolute -bottom-2 -right-2 text-christmas-red animate-bounce">
-                <Sparkles className="w-8 h-8 fill-current" />
+              <div className="absolute -bottom-1 -right-1 text-christmas-red animate-bounce">
+                <Sparkles className="w-6 h-6 fill-current" />
               </div>
             </div>
 
             {/* Personality Titles */}
-            <h1 className="text-4xl font-black text-christmas-red mb-2 leading-none uppercase tracking-tighter">
+            <h1 className="text-3xl font-black text-christmas-red mb-1 leading-none uppercase tracking-tighter">
               {personality.name}
             </h1>
-            <p className="text-lg font-bold text-gray-500 mb-6 italic opacity-80">
+            <p className="text-base font-bold text-gray-400 mb-4 italic">
               "{personality.alias}"
             </p>
 
             {/* Description */}
-            <p className="text-gray-700 leading-relaxed mb-8 font-medium text-lg px-2">
+            <p className="text-gray-600 leading-tight mb-6 font-medium text-base px-2">
               {personality.description}
             </p>
 
             {/* Traits */}
-            <div className="flex flex-wrap justify-center gap-2 mb-10 text-xs">
+            <div className="flex flex-wrap justify-center gap-1.5 mb-6 text-[0.65rem]">
               {personality.traits.map((trait, i) => (
-                <span key={i} className="bg-gray-50 text-gray-600 font-black px-4 py-2 rounded-xl border border-gray-100 uppercase tracking-wider">
+                <span key={i} className="bg-gray-50 text-gray-500 font-black px-3 py-1.5 rounded-xl border border-gray-100 uppercase tracking-wider">
                   {trait}
                 </span>
               ))}
             </div>
 
-            <div className="w-full pt-6 border-t border-dashed border-gray-100 flex justify-between items-center text-[0.6rem] font-black text-gray-400 uppercase tracking-[0.1em]">
+            <div className="w-full pt-4 border-t border-dashed border-gray-100 flex justify-between items-center text-[0.55rem] font-black text-gray-300 uppercase tracking-[0.1em]">
                <span>Christmas Spirit Test</span>
                <div className="flex gap-1">
                   <span>🇳🇬</span>
